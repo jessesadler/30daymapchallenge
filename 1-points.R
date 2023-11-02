@@ -1,4 +1,4 @@
-## 1. Points ##
+## 1. Points: Ancient settlements from before the Common Era ##
 
 library(sf)
 library(readr)
