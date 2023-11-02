@@ -4,11 +4,11 @@ library(sf)
 library(readr)
 library(dplyr)
 library(ggplot2)
-
+library(rnaturalearth)
 
 # Data --------------------------------------------------------------------
 
-ocean <- st_read("data/ne_ocean/ne_10m_ocean.shp")
+ocean <- ne_download(scale = 10, type = "ocean", category = "physical", returnclass = "sf")
 # Major settlements as determined by DARE data
 major_settlements <- read_csv("data/dare-major-settlements.csv")
 # Pleiades data
@@ -43,8 +43,6 @@ ggsave("plots/1-points.png", height = 8, width = 12)
 
 ocean_proj <- st_transform(ocean, crs = st_crs(3035))
 settlements_proj <- st_transform(settlements, crs = st_crs(3035))
-
-bbox <- st_bbox(settlements_proj)
 
 ggplot() + 
   geom_sf(data = ocean_proj, fill = "white") + 
