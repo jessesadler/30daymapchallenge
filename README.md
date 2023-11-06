@@ -14,3 +14,6 @@ Code and plots for the [30 Day Map Challenge](https://30daymapchallenge.com). Th
   - The map is based on AWMC [Map 12.3 Roman Empire of Diocletian and Constantine](http://awmc.unc.edu/wordpress/wp-content/uploads/2012/09/12-3_Roman_Empire_of_Diocletian_and_Constantine.pdf)
 4. A Bad map: All 26,259 points in the Pleiades ancient places data set.
   - Data from [Pleiades](https://pleiades.stoa.org): https://atlantides.org/downloads/pleiades/gis/
+6. Asia: Ancient settlements of the Roman world in Asia
+  - Settlement data from [Pleiades](https://pleiades.stoa.org): https://atlantides.org/downloads/pleiades/gis/
+  - Empire of Alexander data from [Ancient World Mapping Center](https://github.com/AWMC/geodata).
