@@ -91,25 +91,30 @@ st_bbox(asia_points)
 
 styled_text <- 
   "With places named after <span style='color:#F8766D;'>**Alexander the Great**</span> highlighted"
+caption <- paste0("Settlement data from Pleiades: https://pleiades.stoa.org",
+                  "\nEmpire of Alexander data from Ancient World ",
+                  "Mapping Center: https://github.com/AWMC/geodata")
 
 ggplot() + 
   geom_sf(data = land) + 
-  geom_sf(data = alexander_poly[1, ], linetype = 3, fill = "gray80") + 
+  geom_sf(data = alexander_poly, color = NA, fill = "gray80") + 
   geom_sf(data = filter(rivers, scalerank < 8), color = "white", linewidth = 0.3) + 
   geom_sf(data = lakes, fill = "white") + 
   geom_sf(data = asia_points, alpha = 0.7, size = 1.5) + 
   geom_sf(data = asia_alexander, color = "#F8766D", size = 1.5) + 
-  annotate(text, x = 61.5, y = 27,
-           label = "Empire of Alexander the Great in 323 BCE")
+  annotate("text", x = 61.5, y = 27,
+           label = "Empire of Alexander the Great \n in 323 BCE") + 
   coord_sf(datum = NA,
            expand = TRUE,
            xlim = c(24, 74),
            ylim = c(22, 46)) + 
   labs(title = "Ancient Settlements of the Roman World in Asia",
        subtitle = styled_text,
-       caption = "Data from Pleiades: https://pleiades.stoa.org") + 
+       caption = caption,
+       x = NULL, y = NULL) + 
   theme_bw(base_family = "Roboto Condensed",
            base_size = 13) + 
-  theme(plot.subtitle = element_markdown())
+  theme(plot.subtitle = element_markdown(),
+        plot.caption = element_text(hjust = 0))
 
 ggsave("plots/6-asia.png", height = 8, width = 12)
