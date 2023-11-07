@@ -1,4 +1,4 @@
-## 6. Asia: Places in Pleiades data set ##
+## 6. Asia: Major settlements in Asia from Pleiades ##
 
 library(sf)
 library(readr)
@@ -42,8 +42,6 @@ names <- read_csv("data/pleiades/names.csv") |>
 # AWMC data: Empire of Alexander the Great
 alexander_poly <- 
   st_read("data/awmc/Cultural-Data/political_shading/alexanders_empire/alexanders_empire.geojson")
-
-
 
 # Settlements
 settlements <- major_settlements |> 
@@ -99,7 +97,7 @@ ggplot() +
   geom_sf(data = land) + 
   geom_sf(data = alexander_poly, color = NA, fill = "gray80") + 
   geom_sf(data = filter(rivers, scalerank < 8), color = "white", linewidth = 0.3) + 
-  geom_sf(data = lakes, fill = "white") + 
+  geom_sf(data = lakes, fill = "white", color = NA) + 
   geom_sf(data = asia_points, alpha = 0.7, size = 1.5) + 
   geom_sf(data = asia_alexander, color = "#F8766D", size = 1.5) + 
   annotate("text", x = 61.5, y = 27,

@@ -17,3 +17,5 @@ Code and plots for the [30 Day Map Challenge](https://30daymapchallenge.com). Th
 6. Asia: Ancient settlements of the Roman world in Asia
   - Settlement data from [Pleiades](https://pleiades.stoa.org): https://atlantides.org/downloads/pleiades/gis/
   - Empire of Alexander data from [Ancient World Mapping Center](https://github.com/AWMC/geodata).
+7. Navigation: The Ancient Silk Roads
+  - Modeled after Map 17.1 The Silk Roads in Liu, Xinru. "Regional Study: Exchanges Within the Silk Roads World System." In *The Cambridge World History, Volume 4: A World With States, Empires and Networks, 1200 BCE–900 CE*. Cambridge University Press, 2015, page 459.
